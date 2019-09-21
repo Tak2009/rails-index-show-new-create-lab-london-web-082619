@@ -1,0 +1,14 @@
+<h1>Index</h1>
+<%= link_to "Add a new coupon?", new_coupon_path%><br>
+<h3>Coupon List</h3>
+
+
+<% @coupons.each do |coupon|%>
+<div>
+<label>Coupon Code: </label>
+<%= link_to coupon.coupon_code, coupon_path(coupon) %> <!-- showにリンクするときは(個別)を忘れないようにすること -->
+<label>Store Name: </label>
+<%= coupon.store %>
+</div>
+<% end %>
+
